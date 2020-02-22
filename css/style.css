@@ -7,11 +7,11 @@
 /* Custom Properties, update these for your own design */
 
 :root {
-    --ff-primary: 'Source Sans Pro', sans-serif;
-    --ff-secondary: 'Source Code Pro', monospace;
+    --ff-primary: 'Lora', serif;
+    --ff-secondary: 'Roboto Slab', serif;
     
-    --fw-reg: 300;
-    --fw-bold: 900;
+    --fw-reg: 400;
+    --fw-bold: 700;
     
     --clr-light: #fff;
     --clr-dark: #303030;
@@ -35,6 +35,10 @@
 }
 
 /* General styles */
+
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     background: var(--clr-light);
@@ -178,6 +182,30 @@ header{
     border: 0;
     background: transparent;
     cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav{
+    transform: translateX(0)
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger{
+    transform: rotate(.625turn)
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px)
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
 }
 
 .hamburger{
@@ -188,7 +216,7 @@ header{
 .hamburger,
 .hamburger::before,
 .hamburger::after{
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -413,6 +441,20 @@ header{
 
 .social-list__link{
     padding: .5em
+}
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
